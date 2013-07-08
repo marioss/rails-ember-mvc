@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+# Use the 'puma' web server
+gem 'puma'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -20,6 +23,12 @@ gem 'haml'
 
 gem 'ember-rails'
 gem 'ember-source', '1.0.0.rc6.2' # or the version you need
+
+# Heroku Deployment
+group :production do
+  gem 'rails_serve_static_assets', github: 'heroku/rails_serve_static_assets'
+  gem 'rails_log_stdout', github: 'heroku/rails_log_stdout'
+end
 
 # optional since Handlebars 1.0.0 was released
 gem 'handlebars-source', '~> 1.0.12' # or the version you need
