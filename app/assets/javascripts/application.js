@@ -20,6 +20,6 @@
 //= require ember_todomvc
 
 // for more details see: http://emberjs.com/guides/application/
-EmberTodomvc = Ember.Application.create();
+Todos = Ember.Application.create();
 
 //= require_tree .

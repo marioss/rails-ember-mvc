@@ -1,5 +1,7 @@
 EmberTodomvc::Application.routes.draw do
 
+  resources :todos
+
   get "static_pages/home"
 
   root 'static_pages#home'
