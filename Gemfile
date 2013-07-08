@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Specify the Ruby version to enable the deploy to heroku instance
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -7,7 +10,9 @@ gem 'rails', '4.0.0'
 gem 'puma'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -21,17 +26,12 @@ gem 'coffee-rails', '~> 4.0.0'
 # Haml instead of erb
 gem 'haml'
 
-gem 'ember-rails'
-gem 'ember-source', '1.0.0.rc6.2' # or the version you need
-
 # Heroku Deployment
 group :production do
-  gem 'rails_serve_static_assets', github: 'heroku/rails_serve_static_assets'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
   gem 'rails_log_stdout', github: 'heroku/rails_log_stdout'
+  gem 'pg'
 end
-
-# optional since Handlebars 1.0.0 was released
-gem 'handlebars-source', '~> 1.0.12' # or the version you need
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -61,3 +61,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'ember-rails'
+gem 'ember-source', '1.0.0.rc6.2' # or the version you need
+# optional since Handlebars 1.0.0 was released
+gem 'handlebars-source', '1.0.12' # or the version you need
